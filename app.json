@@ -25,6 +25,18 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "5efc57a4-3cf1-4a4e-802c-94d9bba17f87"
+      }
+    },
+    "owner": "teamneuralnode",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/5efc57a4-3cf1-4a4e-802c-94d9bba17f87"
     }
   }
 }
