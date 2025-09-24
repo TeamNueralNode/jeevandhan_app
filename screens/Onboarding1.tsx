@@ -1,12 +1,18 @@
 import { useNavigation } from '@react-navigation/native';
-import { View, Text, TouchableOpacity, StyleSheet, SafeAreaView } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function Onboarding1() {
   const navigation = useNavigation<any>();
 
   return (
-    <SafeAreaView style={styles.container}>
-      <TouchableOpacity style={styles.skip} onPress={() => navigation.replace('Login')}>
+    <SafeAreaView style={styles.container} edges={['top']}> 
+      <TouchableOpacity
+        style={styles.skip}
+        onPress={() => {
+          navigation.replace('Login');
+        }}
+      >
         <Text style={styles.skipText}>Skip</Text>
       </TouchableOpacity>
       <View style={styles.content}>
@@ -20,8 +26,8 @@ export default function Onboarding1() {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#fff' },
-  skip: { position: 'absolute', top: 12, left: 16, zIndex: 1 },
+  container: { flex: 1, backgroundColor: '#fff', paddingTop: 7 },
+  skip: { position: 'absolute', bottom: 24, left: 24, zIndex: 1 },
   skipText: { color: '#888', fontSize: 16 },
   content: { flex: 1, justifyContent: 'center', alignItems: 'center' },
   title: { fontSize: 22, fontWeight: '600', color: '#111' },
