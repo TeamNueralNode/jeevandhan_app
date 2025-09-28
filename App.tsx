@@ -6,6 +6,7 @@ import Onboarding2 from './screens/Onboarding2';
 import Onboarding3 from './screens/Onboarding3';
 import Login from './screens/Login';
 import Home from './screens/Home';
+import ExpenseTracker from './screens/ExpenseTracker';
 
 export type RootStackParamList = {
   Onboarding1: undefined;
@@ -13,6 +14,7 @@ export type RootStackParamList = {
   Onboarding3: undefined;
   Login: undefined;
   Home: undefined;
+  ExpenseTracker: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -27,6 +29,7 @@ export default function App() {
           <Stack.Screen name="Onboarding3" component={Onboarding3} />
           <Stack.Screen name="Login" component={Login} />
           <Stack.Screen name="Home" component={Home} />
+          <Stack.Screen name="ExpenseTracker" component={ExpenseTracker} />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>
