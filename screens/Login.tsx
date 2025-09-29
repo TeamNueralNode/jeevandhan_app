@@ -10,7 +10,7 @@ export default function Login() {
 
   function handleLogin() {
     if (username === 'admin' && password === 'admin') {
-      navigation.reset({ index: 0, routes: [{ name: 'Home' }] });
+      navigation.reset({ index: 0, routes: [{ name: 'MainTabs' }] });
     } else {
       Alert.alert('Invalid credentials', 'Use admin / admin to login');
     }

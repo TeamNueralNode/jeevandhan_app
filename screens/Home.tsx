@@ -71,28 +71,28 @@ export default function Home() {
           <View style={styles.actionsGrid}>
             <TouchableOpacity 
               style={styles.actionCard}
-              onPress={() => navigation.navigate('ExpenseTracker')}
+              onPress={() => navigation.navigate('DocumentUpload' as never)}
             >
               <Text style={styles.actionIcon}>📱</Text>
               <Text style={styles.actionTitle}>Mobile Recharge</Text>
             </TouchableOpacity>
             <TouchableOpacity 
               style={styles.actionCard}
-              onPress={() => navigation.navigate('ExpenseTracker')}
+              onPress={() => navigation.navigate('DocumentUpload' as never)}
             >
               <Text style={styles.actionIcon}>💡</Text>
               <Text style={styles.actionTitle}>Electricity Bill</Text>
             </TouchableOpacity>
             <TouchableOpacity 
               style={styles.actionCard}
-              onPress={() => navigation.navigate('ExpenseTracker')}
+              onPress={() => navigation.navigate('DocumentUpload' as never)}
             >
               <Text style={styles.actionIcon}>🏠</Text>
               <Text style={styles.actionTitle}>House Rent</Text>
             </TouchableOpacity>
             <TouchableOpacity 
               style={styles.actionCard}
-              onPress={() => navigation.navigate('ExpenseTracker')}
+              onPress={() => navigation.navigate('DocumentUpload' as never)}
             >
               <Text style={styles.actionIcon}>🌐</Text>
               <Text style={styles.actionTitle}>Internet Bill</Text>
