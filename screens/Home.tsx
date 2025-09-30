@@ -32,7 +32,10 @@ export default function Home() {
           <Text style={styles.greeting}>Hello, User!</Text>
           <Text style={styles.appName}>JeevanDhan</Text>
         </View>
-        <TouchableOpacity style={styles.profileButton}>
+        <TouchableOpacity 
+          style={styles.profileButton}
+          onPress={() => navigation.navigate('UserProfile' as never)}
+        >
           <Text style={styles.profileIcon}>👤</Text>
         </TouchableOpacity>
       </View>

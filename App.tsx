@@ -12,25 +12,38 @@ import ExpenseTracker from './screens/ExpenseTracker';
 import DocumentUpload from './screens/DocumentUpload';
 import KYCVerification from './screens/KYCVerification';
 import TCSScore from './screens/TCSScore';
+import AIChatbot from './screens/AIChatbot';
+import UserProfile from './screens/UserProfile';
+import Register from './screens/Register';
 
 export type RootStackParamList = {
   Onboarding1: undefined;
   Onboarding2: undefined;
   Onboarding3: undefined;
   Login: undefined;
+  Register: undefined;
   MainTabs: undefined;
+  UserProfile: undefined;
+  DocumentUpload: undefined;
+  KYCVerification: undefined;
 };
 
 export type TabParamList = {
   Home: undefined;
   TCSScore: undefined;
+  AIChatbot: undefined;
+  ExpenseTracker: undefined;
+};
+
+export type ProfileStackParamList = {
+  UserProfile: undefined;
   DocumentUpload: undefined;
   KYCVerification: undefined;
-  ExpenseTracker: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 const Tab = createBottomTabNavigator<TabParamList>();
+const ProfileStack = createNativeStackNavigator<ProfileStackParamList>();
 
 function MainTabs() {
   return (
@@ -43,10 +56,8 @@ function MainTabs() {
             iconName = focused ? 'home' : 'home-outline';
           } else if (route.name === 'TCSScore') {
             iconName = focused ? 'analytics' : 'analytics-outline';
-          } else if (route.name === 'DocumentUpload') {
-            iconName = focused ? 'document' : 'document-outline';
-          } else if (route.name === 'KYCVerification') {
-            iconName = focused ? 'shield-checkmark' : 'shield-checkmark-outline';
+          } else if (route.name === 'AIChatbot') {
+            iconName = focused ? 'chatbubble-ellipses' : 'chatbubble-ellipses-outline';
           } else if (route.name === 'ExpenseTracker') {
             iconName = focused ? 'wallet' : 'wallet-outline';
           } else {
@@ -83,14 +94,9 @@ function MainTabs() {
         options={{ tabBarLabel: 'TCS Score' }}
       />
       <Tab.Screen 
-        name="DocumentUpload" 
-        component={DocumentUpload} 
-        options={{ tabBarLabel: 'Documents' }}
-      />
-      <Tab.Screen 
-        name="KYCVerification" 
-        component={KYCVerification} 
-        options={{ tabBarLabel: 'KYC' }}
+        name="AIChatbot" 
+        component={AIChatbot} 
+        options={{ tabBarLabel: 'AI Assistant' }}
       />
       <Tab.Screen 
         name="ExpenseTracker" 
@@ -110,7 +116,11 @@ export default function App() {
           <Stack.Screen name="Onboarding2" component={Onboarding2} />
           <Stack.Screen name="Onboarding3" component={Onboarding3} />
           <Stack.Screen name="Login" component={Login} />
+          <Stack.Screen name="Register" component={Register} />
           <Stack.Screen name="MainTabs" component={MainTabs} />
+          <Stack.Screen name="UserProfile" component={UserProfile} />
+          <Stack.Screen name="DocumentUpload" component={DocumentUpload} />
+          <Stack.Screen name="KYCVerification" component={KYCVerification} />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>
